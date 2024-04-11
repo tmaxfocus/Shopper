@@ -14,7 +14,7 @@ namespace Catalog.Infrastructure.Data
         public static void SeedData(IMongoCollection<ProductType> typeCollection)
         {
             bool checkBrand = typeCollection.Find(a => true).Any();
-            string path = Path.Combine("Data", "SeedData", "type.json");
+            string path = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Data", "SeedData", "types.json");
             if (!checkBrand)
             {
                 var brandsData = File.ReadAllText(path);
