@@ -1,3 +1,4 @@
+using Catalog.Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Catalog.API.Controllers
@@ -6,6 +7,8 @@ namespace Catalog.API.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
+       // private readonly ICatalogContext _catalogContext;
+       //
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -16,6 +19,7 @@ namespace Catalog.API.Controllers
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
+            //_catalogContext = catalogContext;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
